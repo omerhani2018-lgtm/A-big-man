@@ -54,7 +54,7 @@ func _ready() -> void:
 	_continue_btn = _btn(_main, "Continue", _continue)
 	_continue_btn.disabled = not GameState.has_save()
 	_btn(_main, "Settings", _show_settings)
-	if OS.get_name() != "Android" and OS.get_name() != "iOS":
+	if OS.get_name() not in ["Android", "iOS", "Web"]:
 		_btn(_main, "Quit", func(): get_tree().quit())
 
 	_new_box = VBoxContainer.new()
